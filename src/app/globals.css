@@ -59,25 +59,26 @@
 /* Personal branch theme: dark blues background + purple (#9529a5) primary/link */
 .theme-personal,
 .theme-personal.dark {
-  --background: #0b0d1f; /* deeper dark blue */
-  --foreground: #e6e7ff; /* soft near-white with blue tint */
-  --card: #121436;
-  --card-foreground: #e6e7ff;
-  --popover: #0a0c1e;
-  --popover-foreground: #e6e7ff;
-  --primary: #9529a5; /* purple */
+  /* Based on theme.park Overseerr palette */
+  --background: #0f172a; /* hsl(221,39%,11%) */
+  --foreground: #d1d5db; /* text */
+  --card: #1f2937; /* modal-bg */
+  --card-foreground: #d1d5db;
+  --popover: #111827; /* overlay */
+  --popover-foreground: #d1d5db;
+  --primary: #6366f1; /* link/button */
   --primary-foreground: #ffffff;
-  --secondary: #161a40; /* dark blue */
-  --secondary-foreground: #e6e7ff;
-  --muted: #111432; /* dark blue */
-  --muted-foreground: #a8addb;
-  --accent: #9529a5; /* purple */
-  --accent-foreground: #ffffff;
-  --destructive: #7a1f1f; /* keep red for destructive, slightly muted */
+  --secondary: #374151; /* menu */
+  --secondary-foreground: #e5e7eb;
+  --muted: #374151;
+  --muted-foreground: #9ca3af; /* text-muted */
+  --accent: #a78bfa; /* accent hover */
+  --accent-foreground: #111827;
+  --destructive: #7a1f1f;
   --destructive-foreground: #f9f9fb;
-  --border: #1a1f4d; /* dark blue */
-  --input: #12163a; /* dark blue */
-  --ring: #9529a5; /* purple */
+  --border: #374151; /* drop-down-menu-bg */
+  --input: #1f2937; /* modal */
+  --ring: #6366f1; /* button/link */
 }
 
 @theme inline {
