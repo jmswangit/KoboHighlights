@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/apple-icon.png",
   },
+  themeColor: "#0C0D1F",
 };
 
 export default async function RootLayout({
@@ -23,14 +24,9 @@ export default async function RootLayout({
 }>) {
   const locale = await getLocale();
   const messages = await getMessages();
-  const themeVariant = process.env.NEXT_PUBLIC_THEME_VARIANT;
 
   return (
-    <html
-      lang={locale}
-      className={`box-border ${themeVariant === "personal" ? "theme-personal" : ""}`}
-      suppressHydrationWarning
-    >
+    <html lang={locale} className="box-border" suppressHydrationWarning>
       <body className="bg-background text-foreground">
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
