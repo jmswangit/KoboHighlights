@@ -30,27 +30,27 @@
 }
 
 .dark {
-  --background: #1c1e3d;
+  --background: #0b0d1f;
   --foreground: #e6e7ff;
-  --card: #20234a;
+  --card: #121436;
   --card-foreground: #e6e7ff;
-  --popover: #181a36;
+  --popover: #0a0c1e;
   --popover-foreground: #e6e7ff;
   --primary: #9529a5;
   --primary-foreground: #ffffff;
-  --secondary: #262a5a;
+  --secondary: #161a40;
   --secondary-foreground: #e6e7ff;
-  --muted: #1f2144;
+  --muted: #111432;
   --muted-foreground: #a8addb;
   --accent: #9529a5;
   --accent-foreground: #ffffff;
   --destructive: #7a1f1f;
   --destructive-foreground: #f9f9fb;
-  --border: #2a2e66;
-  --input: #222555;
+  --border: #1a1f4d;
+  --input: #12163a;
   --ring: #9529a5;
   --chart-1: #9529a5;
-  --chart-2: #2a2e66;
+  --chart-2: #1a1f4d;
   --chart-3: #6b65b8;
   --chart-4: #847fd1;
   --chart-5: #9aa0f0;
@@ -59,24 +59,24 @@
 /* Personal branch theme: dark blues background + purple (#9529a5) primary/link */
 .theme-personal,
 .theme-personal.dark {
-  --background: #1c1e3d; /* deep dark blue */
+  --background: #0b0d1f; /* deeper dark blue */
   --foreground: #e6e7ff; /* soft near-white with blue tint */
-  --card: #20234a;
+  --card: #121436;
   --card-foreground: #e6e7ff;
-  --popover: #181a36;
+  --popover: #0a0c1e;
   --popover-foreground: #e6e7ff;
   --primary: #9529a5; /* purple */
   --primary-foreground: #ffffff;
-  --secondary: #262a5a; /* dark blue */
+  --secondary: #161a40; /* dark blue */
   --secondary-foreground: #e6e7ff;
-  --muted: #1f2144; /* dark blue */
+  --muted: #111432; /* dark blue */
   --muted-foreground: #a8addb;
   --accent: #9529a5; /* purple */
   --accent-foreground: #ffffff;
   --destructive: #7a1f1f; /* keep red for destructive, slightly muted */
   --destructive-foreground: #f9f9fb;
-  --border: #2a2e66; /* dark blue */
-  --input: #222555; /* dark blue */
+  --border: #1a1f4d; /* dark blue */
+  --input: #12163a; /* dark blue */
   --ring: #9529a5; /* purple */
 }
 
