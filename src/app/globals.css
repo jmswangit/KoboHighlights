@@ -36,24 +36,47 @@
   --card-foreground: hsl(0 0% 95%);
   --popover: hsl(0 0% 9%);
   --popover-foreground: hsl(0 0% 95%);
-  --primary: hsl(10 65% 45%);
+  --primary: hsl(265 75% 75%);
   --primary-foreground: hsl(0 0% 100%);
-  --secondary: hsl(210 20% 40%);
+  --secondary: hsl(215 40% 22%);
   --secondary-foreground: hsl(210 20% 95%);
-  --muted: hsl(30 15% 20%);
+  --muted: hsl(220 22% 15%);
   --muted-foreground: hsl(30 10% 65%);
-  --accent: hsl(10 65% 45);
+  --accent: hsl(265 75% 75%);
   --accent-foreground: hsl(0 0% 100%);
   --destructive: hsl(0 50% 30%);
   --destructive-foreground: hsl(0 85% 97%);
-  --border: hsl(24 9.8% 15%);
-  --input: hsl(30 30% 20%);
+  --border: hsl(220 22% 20%);
+  --input: hsl(220 22% 17%);
   --ring: hsl(10 65% 45);
   --chart-1: hsl(10 65% 45);
   --chart-2: hsl(210 20% 40%);
   --chart-3: hsl(45 60% 50%);
   --chart-4: hsl(55 70% 60%);
   --chart-5: hsl(65 80% 70%);
+}
+
+/* Personal branch theme: dark blues background + light purple links/primary */
+.theme-personal.dark {
+  --background: hsl(220 25% 10%);
+  --foreground: hsl(220 20% 92%);
+  --card: hsl(220 22% 12%);
+  --card-foreground: hsl(220 20% 92%);
+  --popover: hsl(220 25% 9%);
+  --popover-foreground: hsl(220 20% 92%);
+  --primary: hsl(265 75% 75%); /* light purple */
+  --primary-foreground: hsl(0 0% 10%);
+  --secondary: hsl(215 35% 20%);
+  --secondary-foreground: hsl(220 20% 92%);
+  --muted: hsl(220 22% 14%);
+  --muted-foreground: hsl(220 10% 70%);
+  --accent: hsl(265 75% 75%);
+  --accent-foreground: hsl(0 0% 10%);
+  --destructive: hsl(0 50% 30%);
+  --destructive-foreground: hsl(0 85% 97%);
+  --border: hsl(220 22% 18%);
+  --input: hsl(220 22% 16%);
+  --ring: hsl(265 75% 75%);
 }
 
 @theme inline {

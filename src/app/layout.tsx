@@ -23,9 +23,14 @@ export default async function RootLayout({
 }>) {
   const locale = await getLocale();
   const messages = await getMessages();
+  const themeVariant = process.env.NEXT_PUBLIC_THEME_VARIANT;
 
   return (
-    <html lang={locale} className="box-border" suppressHydrationWarning>
+    <html
+      lang={locale}
+      className={`box-border ${themeVariant === "personal" ? "theme-personal" : ""}`}
+      suppressHydrationWarning
+    >
       <body className="bg-background text-foreground">
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
