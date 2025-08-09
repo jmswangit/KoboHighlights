@@ -27,6 +27,10 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className="box-border" suppressHydrationWarning>
+      <head>
+        <meta name="theme-color" content="#0C0D1F" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      </head>
       <body className="bg-background text-foreground">
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
