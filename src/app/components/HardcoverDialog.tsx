@@ -20,9 +20,10 @@ import {
   postQuotesToHardcover,
   searchHardcoverBooks,
 } from "@/utils/hardcoverUtils";
-import { BookOpenCheck, Loader2, SendToBack } from "lucide-react";
+import { BookOpenCheck, Loader2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import React, { useEffect, useState } from "react";
+import { HardcoverIcon } from "./CustomIcons";
 
 interface HardcoverDialogProps {
   selectedBook: {
@@ -64,7 +65,7 @@ const HardcoverDialog: React.FC<HardcoverDialogProps> = ({
 
   const performSearch = async () => {
     if (!apiKey) {
-      toast({ title: t("error"), description: "Missing Hardcover API key" });
+      toast({ title: t("error"), description: t("hardcover.missing_api_key") });
       return;
     }
     setLoading(true);
@@ -97,14 +98,14 @@ const HardcoverDialog: React.FC<HardcoverDialogProps> = ({
         }
         toast({
           title: t("success"),
-          description: "Uploaded all books to Hardcover",
+          description: t("hardcover.uploaded_all_books"),
         });
       } else if (selectedBook) {
         const chosen = selected;
         if (!chosen) {
           toast({
             title: t("error"),
-            description: "Please select a book result first",
+            description: t("hardcover.select_book"),
           });
           setLoading(false);
           return;
@@ -116,7 +117,7 @@ const HardcoverDialog: React.FC<HardcoverDialogProps> = ({
         );
         toast({
           title: t("success"),
-          description: "Uploaded highlights to Hardcover",
+          description: t("hardcover.uploaded_highlights"),
         });
       }
       setOpen(false);
@@ -131,18 +132,15 @@ const HardcoverDialog: React.FC<HardcoverDialogProps> = ({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline" className="text-sm">
-          <SendToBack className="mr-2 size-4" />
-          Upload to Hardcover
+        <Button variant="outline" className="bg-popover text-sm">
+          <HardcoverIcon className="mr-2 size-4" />
+          {t("send_to_hardcover")}
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-xl">
         <DialogHeader>
-          <DialogTitle>Send highlights to Hardcover</DialogTitle>
-          <DialogDescription>
-            Add your Hardcover API key, search for the correct book, and upload
-            quotes.
-          </DialogDescription>
+          <DialogTitle>{t("hardcover.title")}</DialogTitle>
+          <DialogDescription>{t("hardcover.description")}</DialogDescription>
         </DialogHeader>
         <div className="space-y-3">
           <div className="space-y-1">
@@ -153,7 +151,7 @@ const HardcoverDialog: React.FC<HardcoverDialogProps> = ({
               className="h-10 text-base"
             />
             <div className="text-muted-foreground text-xs">
-              Don’t have one? Get it from{" "}
+              {t("hardcover.get_api_key")}{" "}
               <a
                 href="https://hardcover.app/account/api"
                 target="_blank"
@@ -188,7 +186,7 @@ const HardcoverDialog: React.FC<HardcoverDialogProps> = ({
               {loading ? (
                 <Loader2 className="mr-2 size-4 animate-spin" />
               ) : null}
-              Search
+              {t("search")}
             </Button>
             <label className="ml-auto inline-flex items-center gap-2 text-sm">
               <input
@@ -196,15 +194,11 @@ const HardcoverDialog: React.FC<HardcoverDialogProps> = ({
                 checked={sendAll}
                 onChange={(e) => setSendAll(e.target.checked)}
               />
-              Send all books
+              {t("hardcover.send_all_books")}
             </label>
           </div>
-          <p className="text-muted-foreground text-xs">
-            Tip: To avoid duplicates on Hardcover, consider uploading after you
-            finish a book. This app prevents re-sending from this browser but
-            can’t remove existing entries in Hardcover.
-          </p>
-          <ScrollArea className="max-h-64 border">
+          <p className="text-muted-foreground text-xs">{t("hardcover.tip")}</p>
+          <ScrollArea className="max-h-64 rounded-md border">
             <div className="divide-y">
               {results.map((r) => (
                 <button
@@ -237,7 +231,7 @@ const HardcoverDialog: React.FC<HardcoverDialogProps> = ({
               ))}
               {results.length === 0 && (
                 <div className="text-muted-foreground p-3 text-sm">
-                  No results
+                  {t("no_results")}
                 </div>
               )}
             </div>
@@ -245,7 +239,7 @@ const HardcoverDialog: React.FC<HardcoverDialogProps> = ({
         </div>
         <DialogFooter>
           <DialogClose asChild>
-            <Button variant="outline">Cancel</Button>
+            <Button variant="outline">{t("cancel")}</Button>
           </DialogClose>
           <Button
             onClick={handleSubmit}
@@ -256,7 +250,7 @@ const HardcoverDialog: React.FC<HardcoverDialogProps> = ({
             ) : (
               <BookOpenCheck className="mr-2 size-4" />
             )}
-            Submit
+            {t("submit")}
           </Button>
         </DialogFooter>
       </DialogContent>
