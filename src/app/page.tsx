@@ -17,12 +17,12 @@ import { getBookListDataFromLocalStorage } from "@/utils/localStorageUtils";
 import { useMediaQuery } from "@/utils/useMediaQuery";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
-import { Database } from "sql.js";
+import type { Database } from "sql.js";
 
 export default function Home() {
   const [bookListData, setBookListData] = useState<Book[]>([]);
   const [highlights, setHighlights] = useState<Highlight[]>([]);
-  const [_db, setDb] = useState<Database | null>(null);
+  const [, setDb] = useState<Database | null>(null);
   const [selectedBookId, setSelectedBookId] = useState<string | null>(null);
   const isMobile = useMediaQuery("(max-width: 768px)");
   const [isLocalStorageData, setIsLocalStorageData] = useState(false);
@@ -89,9 +89,9 @@ export default function Home() {
                     bookTitle={selectedBook?.title || ""}
                   />
                 ) : (
-                  <p className="p-3 text-muted-foreground">
+                  <h2 className="p-3 text-muted-foreground">
                     {t("not_uploaded_or_not_selected")}
-                  </p>
+                  </h2>
                 )}
               </div>
             </ResizablePanel>
